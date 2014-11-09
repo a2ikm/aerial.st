@@ -1,1 +1,1 @@
-web: bundle exec puma -p $PORT -C heroku.ru
+web: bundle exec puma -p $PORT -C puma.rb
