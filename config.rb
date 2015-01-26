@@ -57,6 +57,8 @@ Slim::Engine.set_default_options :shortcut => {
 #   end
 # end
 
+set :build_dir, 'public'
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
