@@ -40,3 +40,11 @@ file "#{HOME}/.ssh/authorized_keys" do
   group GROUP
   mode "600"
 end
+
+template "/etc/sudoers.d/#{USER}" do
+  source "#{FILES_DIR}/sudoers.erb"
+  variables user: USER
+  owner "root"
+  group "root"
+  mode "600"
+end
