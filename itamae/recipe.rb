@@ -2,6 +2,9 @@ GROUP = "deploy"
 USER  = "deploy"
 HOME  = "/home/deploy"
 
+ROOT_DIR  = File.expand_path("..", __FILE__)
+FILES_DIR = "#{ROOT_DIR}/files"
+
 %w(
   lsof
   gcc
@@ -23,4 +26,17 @@ user USER do
   uid 501
   gid 501
   home HOME
+end
+
+directory "#{HOME}/.ssh" do
+  user USER
+  group GROUP
+  mode "700"
+end
+
+file "#{HOME}/.ssh/authorized_keys" do
+  content_file "#{FILES_DIR}/authorized_keys"
+  owner USER
+  group GROUP
+  mode "600"
 end
