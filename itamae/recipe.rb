@@ -1,3 +1,6 @@
+GROUP = "deploy"
+USER  = "deploy"
+
 %w(
   lsof
   gcc
@@ -11,11 +14,11 @@
   package pkg
 end
 
-group "deploy" do
+group GROUP do
   gid 501
 end
 
-user "deploy" do
+user USER do
   uid 501
   gid 501
 end
