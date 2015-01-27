@@ -1,17 +1,23 @@
+GIT
+  remote: git://github.com/a2ikm/itamae.git
+  revision: 24c2d091f544abd5aab3d563650c7183df55f421
+  branch: group_resource
+  specs:
+    itamae (1.1.1)
+      ansi
+      hashie
+      specinfra (~> 2.12)
+      thor
+
 GEM
   remote: https://rubygems.org/
   specs:
     ansi (1.5.0)
     hashie (3.3.2)
-    itamae (1.1.1)
-      ansi
-      hashie
-      specinfra (~> 2.1)
-      thor
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
-    specinfra (2.11.10)
+    specinfra (2.12.0)
       net-scp
       net-ssh
     thor (0.19.1)
@@ -20,4 +26,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  itamae
+  itamae!
