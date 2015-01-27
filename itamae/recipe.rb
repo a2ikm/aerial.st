@@ -1,5 +1,6 @@
 GROUP = "deploy"
 USER  = "deploy"
+HOME  = "/home/deploy"
 
 %w(
   lsof
@@ -21,4 +22,5 @@ end
 user USER do
   uid 501
   gid 501
+  home HOME
 end
