@@ -48,3 +48,10 @@ template "/etc/sudoers.d/#{USER}" do
   group "root"
   mode "600"
 end
+
+file "#{HOME}/.bash_logout" do
+  content_file "#{FILES_DIR}/bash_logout"
+  owner USER
+  group GROUP
+  mode "644"
+end

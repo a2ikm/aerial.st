@@ -1,0 +1,2 @@
+# ~/.bash_logout
+printf '\e]0;\a'
