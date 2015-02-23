@@ -17,6 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 # see: https://devcenter.heroku.com/changelog-items/594
 gem 'puma'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
