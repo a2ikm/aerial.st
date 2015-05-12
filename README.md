@@ -2,3 +2,9 @@
 
 Aerialarts - aerial.st
 ======================
+
+## Enviroment Variables
+
+| Name | Description |
+|---|---|
+| ASSET_HOST | Asset host like `assets.aerial.st` |
