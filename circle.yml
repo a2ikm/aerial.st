@@ -2,3 +2,8 @@ machine:
   ruby:
     version: 2.2.2
   timezone: Asia/Tokyo
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: aerial-st
