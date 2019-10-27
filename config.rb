@@ -44,3 +44,9 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+configure :build do
+  set :css_dir,   "//assets.aerial.st/stylesheets"
+  set :image_dir, "//assets.aerial.st/images"
+  set :js_dir,    "//assets.aerial.st/javascripts"
+end
