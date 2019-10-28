@@ -3,13 +3,16 @@ Aerialarts - aerial.st
 
 # Prerequisite
 
-- Ruby 2.6.5
-- Node
+- Docker
 
-# How to set up to develop
+# How to develop
 
 ```console
-$ gem install bundler
-$ bundle install
-$ bundle exec middleman server
+$ docker-compose up -d
+$ open http://localhost:4567
+```
+# How to build
+
+```console
+$ docker-compose up bundle exec middleman build
 ```
