@@ -1,10 +1,15 @@
-[![Circle CI](https://circleci.com/gh/a2ikm/aerial.st/tree/master.svg?style=svg)](https://circleci.com/gh/a2ikm/aerial.st/tree/master)
-
 Aerialarts - aerial.st
 ======================
 
-## Enviroment Variables
+# Prerequisite
 
-| Name | Description |
-|---|---|
-| ASSET_HOST | Asset host like `assets.aerial.st` |
+- Ruby 2.6.5
+- Node
+
+# How to set up to develop
+
+```console
+$ gem install bundler
+$ bundle install
+$ bundle exec middleman server
+```
