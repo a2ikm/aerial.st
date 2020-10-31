@@ -16,5 +16,5 @@ $ open http://localhost:4567
 # How to build
 
 ```console
-$ docker-compose up bundle exec middleman build
+$ docker-compose run app bundle exec middleman build
 ```
