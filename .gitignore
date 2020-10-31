@@ -1,5 +1,2 @@
-.bundle
-.cache
+*.swp
 .DS_Store
-.sass-cache
-build/
