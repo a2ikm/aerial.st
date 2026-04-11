@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="three">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>three</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #ffffff;
+        color: #000000;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+      #number {
+        font-size: 60vmin;
+        font-weight: 700;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="number"></div>
+    <script>
+      function currentNumber() {
+        var DAY_MS = 86400000;
+        // JST 4:00 rollover: shift epoch by (+9h JST - 4h) = +5h
+        var shifted = Date.now() + 5 * 3600 * 1000;
+        var today = Math.floor(shifted / DAY_MS);
+        var base = Math.floor(Date.UTC(2026, 3, 11) / DAY_MS);
+        var diff = today - base;
+        var mod = ((diff % 3) + 3) % 3;
+        return mod === 0 ? 3 : mod;
+      }
+      function render() {
+        document.getElementById("number").textContent = currentNumber();
+      }
+      render();
+      setInterval(render, 60 * 1000);
+    </script>
+  </body>
+</html>
