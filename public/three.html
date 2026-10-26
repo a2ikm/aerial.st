@@ -19,34 +19,46 @@
       }
       body {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         -webkit-user-select: none;
         user-select: none;
         -webkit-touch-callout: none;
       }
-      #number {
-        font-size: 60vmin;
+      .number {
+        font-size: 35vmin;
         font-weight: 700;
         line-height: 1;
+      }
+      hr {
+        width: 60vmin;
+        margin: 4vmin 0;
+        border: none;
+        border-top: 1vmin solid #000000;
       }
     </style>
   </head>
   <body>
-    <div id="number"></div>
+    <div id="five" class="number"></div>
+    <hr>
+    <div id="three" class="number"></div>
     <script>
-      function currentNumber() {
+      function currentDay() {
         var DAY_MS = 86400000;
         // JST 4:00 rollover: shift epoch by (+9h JST - 4h) = +5h
         var shifted = Date.now() + 5 * 3600 * 1000;
         var today = Math.floor(shifted / DAY_MS);
         var base = Math.floor(Date.UTC(2026, 3, 11) / DAY_MS);
-        var diff = today - base;
-        var mod = ((diff % 3) + 3) % 3;
-        return mod === 0 ? 3 : mod;
+        return today - base;
+      }
+      function mod(n, m) {
+        return ((n % m) + m) % m;
       }
       function render() {
-        document.getElementById("number").textContent = currentNumber();
+        var n = currentDay();
+        document.getElementById("five").textContent = mod(n, 5) + 1;
+        document.getElementById("three").textContent = mod(n, 3) + 1;
       }
       render();
       setInterval(render, 60 * 1000);
