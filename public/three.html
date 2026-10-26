@@ -31,6 +31,9 @@
         font-weight: 700;
         line-height: 1;
       }
+      .total {
+        font-size: 0.5em;
+      }
       hr {
         width: 60vmin;
         margin: 4vmin 0;
@@ -40,9 +43,9 @@
     </style>
   </head>
   <body>
-    <div id="five" class="number"></div>
+    <div class="number"><span id="five"></span><span class="total"> / 5</span></div>
     <hr>
-    <div id="three" class="number"></div>
+    <div class="number"><span id="three"></span><span class="total"> / 3</span></div>
     <script>
       function currentDay() {
         var DAY_MS = 86400000;
